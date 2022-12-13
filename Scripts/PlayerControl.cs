@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Input Controls for the rotating platform using arrow keys
         direction = Input.GetAxisRaw("Horizontal");
         if (direction > 0f)
         {
