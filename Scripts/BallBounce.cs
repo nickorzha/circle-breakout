@@ -10,20 +10,20 @@ public class BallBounce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.AddForce(new Vector2(100f, 100f));
+        rb.AddForce(new Vector2(100f, 100f)); // Initial force to make ball move
     }
 
     // Update is called once per frame
     void Update()
     {
-        lastvelocity = rb.velocity;
+        lastvelocity = rb.velocity; // Updating ball speed
     }
-
+    // Checking for collision of ball
     void OnCollisionEnter2D(Collision2D coll)
     {
         //Debug.Log("Bounce");
         var speed = lastvelocity.magnitude;
-        var direction = Vector3.Reflect(lastvelocity.normalized, coll.contacts[0].normal);
+        var direction = Vector3.Reflect(lastvelocity.normalized, coll.contacts[0].normal); // Making the ball bounce back after collision
         rb.velocity = direction * Mathf.Max(speed, minvelocity);
     }
 }
