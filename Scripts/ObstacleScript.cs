@@ -19,13 +19,13 @@ public class ObstacleScript : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        playerScore = 0;
+        playerScore = 0; // Resetting the score for new game
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        playerScore++;
-        highScore = Mathf.Max(playerScore, highScore);
+        playerScore++; // Increasing the score as each obstacle is hit
+        highScore = Mathf.Max(playerScore, highScore); // Calculating high score
         Destroy(gameObject);
     }
 }
