@@ -15,6 +15,7 @@ public class GameEnd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Respawning the top set of obstacles after all of them get hit
         if (GameObject.Find("TopObstacles(Clone)") == null && GameObject.Find("TopObstacles") == null)
         {
             timer1 += Time.deltaTime;
@@ -24,7 +25,7 @@ public class GameEnd : MonoBehaviour
                 timer1 = 0f;
             }
         }
-
+        // Respawning the bottom set of obstacles after all of them get hit
         if(GameObject.Find("BottomObstacles(Clone)") == null && GameObject.Find("BottomObstacles") == null)
         {
             timer2 += Time.deltaTime;
@@ -37,10 +38,10 @@ public class GameEnd : MonoBehaviour
     }
 
     
-
+    // Checking for collision of ball with the center platform
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(ball);
+        Destroy(ball); // If collision occurs, game is over
         SceneManager.LoadScene("SampleScene 1");
 
     }
