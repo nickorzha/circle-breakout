@@ -1,5 +1,4 @@
-# Circle-Breakout
-* Click [here](https://revanthponna.github.io/Circle-Breakout/) to play the game on a Github page created for it. Make sure to turn on fullscreen for best experience.
+# Circle Breakout
 * A fun 2D game I developed using Unity Engine and C#, focusing on player control, collisions, game physics and score count.
 * Created input control to rotate the player platform clockwise and anticlockwise with left and right arrow keys respectively.
 * Implemented the Reflect function on collision to make the ball bounce back at the correct angle.
